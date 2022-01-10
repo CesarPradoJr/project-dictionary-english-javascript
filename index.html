@@ -5,22 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Modelo</title>
+  <title>App English</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-  <input type="checkbox" id="menu-hamburger"></input>
-  <label for="menu-hamburger">
-    <div class="menu">
-        <span class="hamburger"></span>
-    </div>
+  <div class="header"></div>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
   </label>
-  <ul>
-    <li><a>Home</a></li>
-    <li><a>Learned Words</a></li>
-    <li><a>?</a></li>
-  </ul>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li><a href="" target="_blank">Home</a></li>
+      <li><a href="" target="_blank">Learned Words</a></li>
+      <li><a href="" target="_blank">About</a></li>
+    </ul>
+  </div>
   <input type="checkbox" id="card-miss"></input>
   <label class="card-miss">
   <div class="card">
@@ -29,7 +32,7 @@
         <div class="card__content">
 					<div class="card__header">
             <img src="./assets/img/br.png" alt="" class="br" />
-						<h2>Card-back</h2>
+						<h2>Card-front</h2>
 					</div>
         </div>
 			</div>

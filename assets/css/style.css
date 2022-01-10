@@ -148,117 +148,137 @@ body {
   animation: colors 15s ease infinite;
 }
 
-@keyframes colors {
-  0%{
-    background-position: 0% 50%;
-  }
-  50%{
-    background-position: 100% 50%;
-  }
-  100%{
-    background-position: 0% 50%;
-  }
-}
-
-.menu {
-  background-color: #fff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  position: relative;
-  top: 7px;
-  right: -7px;
-  cursor: pointer;
-  box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
-  transition: box-shadow 1s ease-in-out;
-}
-
-.menu:hover{
-  box-shadow: 0 0 0 5px #fff, 0 0 0 5px #fff;
-}
-
-.hamburger {
+.header {
   display: block;
-  background-color: #000;
-  width: 25px;
-  height: 2px;
-  position: relative;
-  top: 24px;
-  left: 12px;
-  transition: .5s ease-in-out;
-}
-
-.hamburger:before,
-.hamburger:after {
-  background-color: #000;
-  content: '';
-  display: block;
+  margin: 0 auto;
   width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #fc466a00;
+  position: fixed;
+  height: 60px!important;
+  overflow: hidden;
+  z-index: 10;
+}
+.main {
+  margin: 0 auto;
+  display: block;
   height: 100%;
-  position: absolute;
-  transition: .5s ease-in-out;
+  margin-top: 60px;
+}
+.mainInner{
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.mainInner div{
+  display:table-cell;
+  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+}
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #9b7f8500 0%, #3f5efb00 100%);
+}
+.sidebarMenuInner{
+  margin:0;
+  padding:0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
 }
 
-.hamburger:before{
-    top: -10px;
-}
-
-.hamburger:after{
-  bottom: -10px;
-}
-
-input{
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
   display: none;
 }
-
-input:checked ~ ul {
-  opacity: 1;
-}
-
-input:checked ~ label .card {
-  opacity: 0;
-  transition: .25s .5s cubic-bezier(0.35, 0.33, 0, 1.38);
-}
-
-
-input:checked ~ label .menu {
-  box-shadow: 0 0 0 200vw rgb(255, 255, 255), 0 0 0 100vh rgb(255, 255, 255);
-  background: linear-gradient(45deg, #4C3F91, #9145B6, #B958A5, #FF5677);
-}
-
-input:checked ~ label .hamburger {
-  transform: rotate(45deg);
-}
-
-input:checked ~ label .hamburger:before {
-  transform: rotate(90deg);
-  top: 0;
-}
-input:checked ~ label .hamburger:after {
-  transform: rotate(90deg);
-  bottom: 0;
-}
-
-ul {
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
   opacity: 0;
-  transition: .25s .5s cubic-bezier(0.35, 0.33, 0, 1.38);
 }
-
-a {
-  color: #6441a5;
-  font-size: 40px;
-  display: block;
-  text-decoration: none;
-  margin-bottom: 40px;
-  border-radius: 5px;
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
 }
-
-a:hover{
-  color: #fff;
-  background-color: #6441a5;
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
 }
