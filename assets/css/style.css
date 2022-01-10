@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary: #f700ff;
+  --secondary: #ab08f7;
+  --dark: #212121;
+  --light: #F3F3F3;
+}
+*,
+*:before
+*:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  margin-top: 250px;
+  margin-left: 800px;
+  width: 400px;
+  height: 350px;
+  perspective: 1000px;
+  opacity: 1;
+  position: absolute; 
+  display: inline-block;
+}
+
+.card__inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__inner.is-flipped {
+  transform: rotateY(-180deg);
+}
+
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__face--front {
+  background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__face--front h2 {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.card__face--back {
+  background-color: var(--light);
+  transform: rotateY(-180deg);
+}
+
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
+.card__header {
+  position: relative;
+  padding: 30px 30px 40px;
+}
+
+.card__header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+  z-index: -1;
+  border-radius: 0px 0px 50% 0px;
+}
+
+.usa {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFF;
+  margin-top: -24px;
+  margin-left: -21px;
+}
+
+.br {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFF;
+  margin-top: -24px;
+  margin-left: -21px;
+  position: relative;
+}
+
+.card__header h2 {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card__body {
+  padding: 30px;
+}
+
+.card__body h3 {
+  color: var(--dark);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card__body p {
+  color: var(--dark);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #4C3F91, #9145B6, #B958A5, #FF5677);
+  background-size: 400% 400%;
+  font-family: 'Open sans', sans-serif;
+  animation: colors 15s ease infinite;
+}
+
+@keyframes colors {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+.menu {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 7px;
+  right: -7px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+  transition: box-shadow 1s ease-in-out;
+}
+
+.menu:hover{
+  box-shadow: 0 0 0 5px #fff, 0 0 0 5px #fff;
+}
+
+.hamburger {
+  display: block;
+  background-color: #000;
+  width: 25px;
+  height: 2px;
+  position: relative;
+  top: 24px;
+  left: 12px;
+  transition: .5s ease-in-out;
+}
+
+.hamburger:before,
+.hamburger:after {
+  background-color: #000;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+.hamburger:before{
+    top: -10px;
+}
+
+.hamburger:after{
+  bottom: -10px;
+}
+
+input{
+  display: none;
+}
+
+input:checked ~ ul {
+  opacity: 1;
+}
+
+input:checked ~ label .card {
+  opacity: 0;
+  transition: .25s .5s cubic-bezier(0.35, 0.33, 0, 1.38);
+}
+
+
+input:checked ~ label .menu {
+  box-shadow: 0 0 0 200vw rgb(255, 255, 255), 0 0 0 100vh rgb(255, 255, 255);
+  background: linear-gradient(45deg, #4C3F91, #9145B6, #B958A5, #FF5677);
+}
+
+input:checked ~ label .hamburger {
+  transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburger:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+input:checked ~ label .hamburger:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  opacity: 0;
+  transition: .25s .5s cubic-bezier(0.35, 0.33, 0, 1.38);
+}
+
+a {
+  color: #6441a5;
+  font-size: 40px;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+a:hover{
+  color: #fff;
+  background-color: #6441a5;
+}
