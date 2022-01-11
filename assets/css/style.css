@@ -23,6 +23,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
 }
 
 .card__inner {
@@ -81,6 +82,11 @@
   padding: 30px 30px 10px;
 }
 
+.card__header__front {
+  position: relative;
+  padding: 30px 30px 10px;
+}
+
 .card__header:after {
   content: '';
   display: block;
@@ -88,10 +94,10 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 20px;
   background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
   z-index: -1;
-  border-radius: 0px 0px 50% 0px;
+  border-radius: 0px 0px 20% 0px;
 }
 
 .usa {
@@ -99,8 +105,9 @@
   height: 50px;
   border-radius: 50%;
   background-color: #FFF;
-  margin-top: -24px;
+  margin-top: -9px;
   margin-left: -21px;
+  position: absolute;
 }
 
 .br {
@@ -119,10 +126,12 @@
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
+  margin-top: auto;
 }
 
 .card__body {
-  padding: 30px;
+  padding: 10px;
+  margin-top: -30px;
 }
 
 .card__body h3 {
@@ -284,22 +293,23 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   margin-top: -9px;
 }
 .heart {     
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   background: #f20044;
   position: relative;
   transform: rotate(-45deg);
   box-shadow: -10px 10px 90px #f20044;
   animation: heart 0.6s linear infinite;
-  left: 25%;
-  top: 5%;
+  left: 75%;
+  top: 90%;
   cursor: pointer;
+  position:absolute
 }
 .heart:before{
   content: '';
   position: absolute;
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   background: #f20044;
   top: -50%;
   border-radius: 50px;
@@ -309,8 +319,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .heart:after{
   content: '';
   position: absolute;
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   background: #f20044;
   right: -50%;
   border-radius: 50px;
@@ -330,22 +340,23 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 .right_{
-  height: 30px;
-  width: 12px;
+  height: 17px;
+  width: 7px;
   background: #15ff00;
   position: relative;
   transform: rotate(-45deg);
   box-shadow: -10px 10px 90px #15ff00;
   animation: right_ 0.6s linear infinite;
-  left: 65%;
-  top: -3%;
+  left: 88%;
+  top: 90%;
   cursor: pointer;
+  position: absolute;
 }
 .right_:before{
   content: '';
     position: absolute;
-    height: 40px;
-    width: 12px;
+    height: 22px;
+    width: 7px;
     background: #15ff00;
     bottom: -45%;
     right: -200%;
