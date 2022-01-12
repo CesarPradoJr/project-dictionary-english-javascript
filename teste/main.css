@@ -81,6 +81,7 @@ body{
 }
 .card__header {
     position: relative;
+    border-radius: 10px;
 }
 .card__header:after {
     content: '';
@@ -92,7 +93,7 @@ body{
     bottom: 250px;
     background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
     z-index: -1;
-    border-radius: 0px 0px 15px 15px
+    border-radius: 10px 10px 45% 0px
 }
 .card__header h2{
     color: #FFF;
@@ -119,4 +120,5 @@ body{
     cursor: pointer;
     margin-bottom: 96%;
     margin-left: 96%;
+    z-index: 10;
 }
