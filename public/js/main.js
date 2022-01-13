@@ -1,6 +1,5 @@
 const front = document.querySelectorAll('.b_front');
 const back = document.querySelectorAll('.b_back');
-
 front.forEach(item => {
     item.addEventListener('click', event => {
         const ft = event.target.parentElement.parentElement;
@@ -25,4 +24,3 @@ back.forEach(item => {
         }
     })
 })
-

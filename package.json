@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "excel-to-sqlite": "^1.0.0",
+    "axios": "^0.24.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
     "node": "^17.3.0",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
   }
