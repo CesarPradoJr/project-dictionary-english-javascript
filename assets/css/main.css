@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://css.gg/close-r.css');
+:root {
+  --primary: #f700ff;
+  --secondary: #ab08f7;
+  --dark: #212121;
+  --light: #F3F3F3;
+}
+*,
+*:before
+*:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background: linear-gradient(45deg, #4C3F91, #9145B6, #B958A5, #FF5677);
+    background-size: 400% 400%;
+    animation: colors 15s ease infinite;
+    font-family: 'Open sans', sans-serif;
+}
+@keyframes colors{
+    0%{
+      background-position: 0 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0 50%;
+    }
+  }
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    
+}
+.card {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transition: transform 2s;
+    margin-top: 25%;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+.card div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backface-visibility: hidden;
+    padding: 10px;
+}
+.card .front {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    -webkit-box-reflect: below 3px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+.card .front h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+}
+.card .back {
+    background: var(--light);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    transform: rotateY(-180deg);
+    -webkit-box-reflect: below 3px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+.card.flipped {
+    transform: rotateY(-180deg)
+}
+.card__header {
+    position: relative;
+    border-radius: 10px;
+}
+.card__header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 250px;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    z-index: -1;
+    border-radius: 10px 10px 45% 0px
+}
+.card__header h2{
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 14px;
+}
+.card__body {
+    padding: 10px;
+    margin-top: 95px;
+}
+.card__body h1 {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.card__body h2 {
+    color: var(--dark);
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.card__body h3 {
+    color: var(--dark);
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.card__body p {
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.b_front{
+    pointer-events: auto;
+    width: 100%;
+    height: 100%;
+    background: #21212100;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+}
+.b_back{
+    border-radius: 50%;
+    width: 10%;
+    height: 10%;
+    border: transparent;
+    background: #21212100;
+    cursor: pointer;
+    margin-bottom: 96%;
+    margin-left: 96%;
+    z-index: 10;
+}
+.usa {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFF;
+    margin-top: 10px;
+    margin-left: 5px;
+    position: absolute;
+  }
+  
+.br {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  background-color: #FFF;
+  margin-top: -115px;
+  position: absolute;
+}
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #fc466a00;
+  position: fixed;
+  height: 60px!important;
+  overflow: hidden;
+  z-index: 10;
+}
+.main {
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  margin-top: 60px;
+}
+.mainInner{
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.mainInner div{
+  display:table-cell;
+  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+}
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #9b7f8500 0%, #3f5efb00 100%);
+}
+.sidebarMenuInner{
+  margin:0;
+  padding:0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+.forms{
+    position: relative;
+    margin-top: 35px;
+    margin-left: 260px;
+}
+.heart{
+    fill: red;
+    cursor: pointer;
+}
+.right{
+    fill: rgb(51, 255, 0);
+    margin-left: 15px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+.right:hover{
+    fill: rgb(28, 138, 0);
+    margin-left: 15px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+.heart:hover{
+    fill: rgb(185, 12, 12);
+    cursor: pointer;
+}
+.back_{
+    fill: rgb(255, 255, 255);
+    cursor: pointer;
+}
