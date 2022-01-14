@@ -78,11 +78,13 @@ body{
 }
 .card .front h2 {
     color: #FFF;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 900;
     text-transform: uppercase;
     text-align: center;
     margin-top: 40px;
+    font-family: 'Open Sans';
+
 }
 .card .back {
     background: var(--light);
@@ -115,7 +117,7 @@ body{
 }
 .card__header h2{
   color: #FFF;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
