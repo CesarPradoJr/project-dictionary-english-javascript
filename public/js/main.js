@@ -44,11 +44,11 @@ function show(lang) {
     let output_ = ''
     for(let pt_br of Object.keys(lang)) {
         var languages = lang[pt_br];
-        output += `<h2>${languages[0].Portuguese}</h2>`
+        output += `${languages[0].Portuguese}`
         
         console.log(languages[0]);
     }
-    document.querySelector('.b_front').innerHTML = output
+    document.querySelector('.back0').innerHTML = output
 
     for(let en_us of Object.keys(lang)) {
         var languages = lang[en_us];
