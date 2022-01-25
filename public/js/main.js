@@ -23,8 +23,8 @@ back.forEach(item => {
         }else{
             btn_front.style.pointerEvents = "auto";
         }
-    })
-})
+    });
+});
 
 async function getContent() {
     try {
@@ -57,4 +57,25 @@ function show(lang) {
         console.log(languages[0]);
     }
     document.querySelector('.back1').innerHTML = output_
+}
+
+
+async function openGrammar(){
+    try {
+        const respGrammar = await fetch('http://localhost:5000/grammar');
+        const data  = await respGrammar.json();
+        showGrammar(data);
+    } catch (error) {
+        // console.log(error)
+    }
+}
+
+openGrammar()
+
+function showGrammar(grammar) {
+    let respGrammar = ''
+    respGrammar += `${grammar[0]}`
+
+    document.querySelector('.grammar').innerHTML = respGrammar
+    
 }

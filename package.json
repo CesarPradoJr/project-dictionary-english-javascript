@@ -10,6 +10,7 @@
     "express-ejs-layouts": "^2.5.1",
     "node": "^17.3.0",
     "nodemon": "^2.0.15",
+    "puppeteer": "^13.1.1",
     "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
   }
 }

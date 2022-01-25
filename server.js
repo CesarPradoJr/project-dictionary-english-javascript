@@ -4,7 +4,11 @@ const expressLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 5000;
 const sqldb = require('./connect_db').db;
+const scraping = require('./scraping');
 const cors = require('cors');
+var fs=require('fs');
+var data=fs.readFileSync('grammar.json', 'utf8');
+var grammar=JSON.parse(data);
 
 app.set('view engine', 'ejs');     // Setamos que nossa engine será o ejs
 app.use(expressLayouts);           // Definimos que vamos utilizar o express-ejs-layouts na nossa aplicação
@@ -36,3 +40,12 @@ app.get("/result", (request, response) => {
       console.log(rows);
     });
   });
+
+
+app.get('/grammar',sendAll);
+ 
+ function sendAll(request,response){
+ response.send(grammar);
+
+ }
+  
