@@ -37,7 +37,6 @@ app.get("/result", (request, response) => {
       if (err) {
         response.status(500).json({ err: err });
       }
-      console.log(rows);
     });
   });
 

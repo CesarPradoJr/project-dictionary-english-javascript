@@ -8,23 +8,5 @@ let db = new sqlite3.Database('./app.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_
   }
 );
 
-// const sql = `SELECT * FROM Translate WHERE Learned = 0 ORDER BY random() LIMIT 1`;
-
-// const result = db.all(sql, [],(err, rows) => {
-//   if (err) return console.error(err.message);
-
-//   rows.forEach((row) => {
-//     console.log(row)
-//   })
-// })
-
-
-// close the database connection
-// db.close((err) => {
-//   if (err) {
-//     return console.error(err.message);
-//   }
-//   console.log('Close the database connection.');
-// });
 
 exports.db = db;

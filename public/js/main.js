@@ -29,11 +29,9 @@ back.forEach(item => {
 async function getContent() {
     try {
        const response = await fetch('http://localhost:5000/result')
-       //console.log(response);
        const data = await response.json();
        show(data);
     } catch (error) {
-        // console.log(error)
     }
 }
 
@@ -46,7 +44,6 @@ function show(lang) {
         var languages = lang[pt_br];
         output += `${languages[0].Portuguese}`
         
-        console.log(languages[0]);
     }
     document.querySelector('.back0').innerHTML = output
 
@@ -54,11 +51,10 @@ function show(lang) {
         var languages = lang[en_us];
         output_ += `${languages[0].English}`
         
-        console.log(languages[0]);
     }
     document.querySelector('.back1').innerHTML = output_
+    return output_
 }
-
 
 async function openGrammar(){
     try {
@@ -66,7 +62,6 @@ async function openGrammar(){
         const data  = await respGrammar.json();
         showGrammar(data);
     } catch (error) {
-        // console.log(error)
     }
 }
 
@@ -79,3 +74,4 @@ function showGrammar(grammar) {
     document.querySelector('.grammar').innerHTML = respGrammar
     
 }
+
