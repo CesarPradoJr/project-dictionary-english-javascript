@@ -1,14 +1,14 @@
 const puppeteer = require ('puppeteer');
 const fs = require('fs');
-const getUser = require('./AxiosApi/api');
+const api = require('./AxiosApi/api');
 
-console.log(getUser);
+console.log(api.getUser);
 
 
 (async () => {
     const browser = await puppeteer.launch();
     const pageGrammar = await browser.newPage();
-    const dictionaryEnglish = (`https://dictionary.cambridge.org/pt/dicionario/ingles/${getUser}`);
+    const dictionaryEnglish = (`https://dictionary.cambridge.org/pt/dicionario/ingles/${api.getUser}`);
     await pageGrammar.goto(dictionaryEnglish);
 
     const resultGrammar = await pageGrammar.evaluate(() => {
